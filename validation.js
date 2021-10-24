@@ -115,6 +115,9 @@ Validation.isRequired = (selector, message) => {
   return {
     selector: selector,
     test: function (value) {
+      if(typeof value === 'string'){
+        return value.trim() ? undefined: message || "Vui lòng nhập trường này"
+      }
       return value ? undefined : message || "Vui lòng nhập trường này"; //method trim() loại bỏ các dấu cách space
     },
   };

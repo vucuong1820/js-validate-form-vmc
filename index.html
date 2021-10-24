@@ -112,20 +112,20 @@
         error: ".form-message",
         formSelector: ".form-group",
         rules: [
-          // Validation.isRequired("#fullname", "Vui lòng nhập tên đầy đủ"),
-          // Validation.isRequired("#email"),
-          // Validation.isEmail("#email"),
-          // Validation.minLength("#password", 6),
-          // Validation.isRequired("#password_confirmation"),
+          Validation.isRequired("#fullname", "Vui lòng nhập tên đầy đủ"),
+          Validation.isRequired("#email"),
+          Validation.isEmail("#email"),
+          Validation.minLength("#password", 6),
+          Validation.isRequired("#password_confirmation"),
           Validation.isRequired('input[name="gender"]'),
-          // Validation.isRequired('#province'),
-          // Validation.isConfirmed(
-          //   "#password_confirmation",
-          //   () => {
-          //     return document.querySelector("#password").value;
-          //   },
-          //   "Mật khẩu nhập lại không chính xác"
-          // ),
+          Validation.isRequired('#province'),
+          Validation.isConfirmed(
+            "#password_confirmation",
+            () => {
+              return document.querySelector("#password").value;
+            },
+            "Mật khẩu nhập lại không chính xác"
+          ),
         ],
         onSubmit: function (data) {
           console.log(data);
